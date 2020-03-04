@@ -55,9 +55,11 @@ Note that training a model with QSM labels to segment B0 images is a similar sce
 When training a model with QSM labels, using B0 image for segmentation (case 2) was much worse than using QSM image (case 3). This is quite reasonable but current QSM guided B0 segmentation is not good enough to justify why we used only B0 image in this work. This can be due to the discrepancy between QSM manual labels and B0 hyper-intense appearance (i.e., manual labels on the B0) that might be affected by incorrect registration between QSM and B0, uncertainty of manual labeling on the QSM, or a sub-optimal trained model. Indeed, I found such issue in many cases below. Minimizing such discrepancy is important because a deep learning model relies on the B0 image appearance within the QSM label. 
 
 #### 1. Major issues in case 1: different intensity distribution between training data (from the existing 29 data and new data)
-  
-    : figure example for each case (compare histograms from one of 29 training data and one out of new datasets) 
- 
+    : image intensity histograms for one of 29 training data and one out of new datasets below are different 
+     
+   ![Histogram of FA022 B0 image out of new datasets](/FA022_hist.jpg)
+   ![Histogram of SLEEP126 B0 image out of the existing datasets](/SLEEP126_hist.jpg)
+   
 #### 2. Major issues in case 2
 
     : Discrepancy between QSM manual labels and B0 hyper-intense appearance -> this might be due to registration error or image contrast: FA005, FA014, FA015, FA017, FA021, FA022, FA024_1, FA024_2

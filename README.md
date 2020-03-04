@@ -55,18 +55,24 @@ Note that training a model with QSM labels to segment B0 images is a similar sce
 When training a model with QSM labels, using B0 image for segmentation (case 2) was much worse than using QSM image (case 3). This is quite reasonable but current QSM guided B0 segmentation is not good enough to justify why we used only B0 image in this work. This can be due to the discrepancy between QSM manual labels and B0 hyper-intense appearance (i.e., manual labels on the B0) that might be affected by incorrect registration between QSM and B0, uncertainty of manual labeling on the QSM, or a sub-optimal trained model. Indeed, I found such issue in many cases below. Minimizing such discrepancy is important because a deep learning model relies on the B0 image appearance within the QSM label. 
 
 #### 1. Major issues in case 1: different intensity distribution between training data (from the existing 29 data and new data)
-    : image intensity histograms for one of 29 training data and one out of new datasets below are different 
+
+##### : image intensity histograms for one of 29 training data and one out of new datasets below are different, especially in lower and higher intensity values
      
    ![Histogram of FA022 B0 image out of new datasets](/FA022_hist.jpg)
    ![Histogram of SLEEP126 B0 image out of the existing datasets](/SLEEP126_hist.jpg)
    
 #### 2. Major issues in case 2
 
-    : Discrepancy between QSM manual labels and B0 hyper-intense appearance -> this might be due to registration error or image contrast: FA005, FA014, FA015, FA017, FA021, FA022, FA024_1, FA024_2
+##### : Discrepancy between QSM manual labels and B0 hyper-intense appearance -> this might be due to registration error or image contrast: FA005 (below), FA014, FA015, FA017, FA021, FA022, FA024_1, FA024_2 (blue: QSM labels, red: B0 Segmentation)
 
-    : Uncertainty of manually labeling on the QSM - FA013 (some artifacts on the left dentate), FA014
+<img src="/FA005_qsm_labels_and_b0_seg_on_b0.jpg" width="400" height="249" /> <img src="/FA005_qsm_labels_and_b0_seg_on_qsm.jpg" width="400" height="249" />
+   
+##### : Uncertainty of manually labeling on the QSM - FA013 (some artifacts on the left dentate), FA014
 
-    : Insufficient segmentation due to training on mismatched QSM labels and b0 appearance (3 might be affected by 1 and 2)- FA010, FA013, FA015, FA016, FA022
+
+
+
+##### : Insufficient segmentation due to training on mismatched QSM labels and b0 appearance (3 might be affected by 1 and 2)- FA010, FA013, FA015, FA016, FA022
 
 
 To further improve QSM guided B0 segmentation, we might need to further verify registration between QSM and B0 to better represent B0 features, especially around the DCN. 

@@ -76,4 +76,4 @@ When training a model with QSM labels, using B0 image for segmentation (case 2) 
 
 To further improve QSM guided B0 segmentation, we might need to further verify registration between QSM and B0 to better represent B0 features, especially around the DCN. 
 
-The reviewers might point out that it would be better to use QSM images for more accurate segmentation although it requires a post-processing. Indeed, many other segmentation works use QSM images these days (A quick idea for the future work is to generate QSM like image from B0 image using a deep learning model to improve segmentation).
+Also, the reviewers might point out that it would be better to use QSM images for more accurate segmentation although it requires a post-processing. Indeed, many other segmentation works use QSM images these days. A quick idea for the future work is to generate QSM like image from B0 image using a deep learning model to improve segmentation. For now, please let us focus on improving the registration first.

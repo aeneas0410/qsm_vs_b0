@@ -70,7 +70,7 @@ When training a model with QSM labels, using B0 image for segmentation (case 2) 
 ##### : Uncertainty of manually labeling on the QSM - FA013 (see some artifacts on the left dentate of the left image)
 <img src="/FA013_qsm_label_left.jpg" width="400" height="249" /> 
 
-##### : Insufficient segmentation due to training on mismatched QSM labels and b0 appearance (3 might be affected by 1 and 2)- FA010 (see under-segmentation on the B0 image (left) and over-segmentation on the QSM image (rigfht) below), FA013, FA015, FA016, FA022 (blue: QSM labels, red: B0 segmentation, green: QSM segmentation)
+##### : Insufficient segmentation due to training on mismatched QSM labels and b0 appearance (3 might be affected by 1 and 2)- FA010 (see under-segmentation on the B0 image (left) and over-segmentation on the QSM image (right) below), FA013, FA015, FA016, FA022 (blue: QSM labels, red: B0 segmentation, green: QSM segmentation)
 
 <img src="/FA010_qsm_labels_and_b0_seg_on_b0.jpg" width="400" height="249" /> <img src="/FA010_qsm_labels_and_b0_seg_on_qsm.jpg" width="400" height="249" />
 
